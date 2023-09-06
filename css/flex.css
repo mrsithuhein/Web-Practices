@@ -1,0 +1,34 @@
+/* .box div:nth-child(1) {
+    align-self: stretch;
+} */
+body {
+    height: 3000px;
+}
+
+div {
+    position: relative;
+}
+
+div img:nth-child(1) {
+    width: 200px;
+    position: absolute;
+    z-index: 3;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    top: 0;
+    margin: auto;
+}
+
+div img:nth-child(2) {
+    width: 200px;
+    position: absolute;
+    left: 100px;
+    top: 100px;
+    z-index: 2;
+}
+
+div img:nth-child(3) {
+    width: 200px;
+    position: absolute;
+}

@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            margin: 30px;
+        }
+
+        .bar {
+            height: 5px;
+            border: 1px solid rgba(0, 0, 0, 0.142);
+            width: 400px;
+            border-radius: 3px;
+        }
+
+        .progress {
+            height: 100%;
+            width: 100%;
+            background-color: rgb(7, 217, 217);
+            animation-name: progress;
+            animation-duration: 3s;
+            border-radius:2px 0px 0px 2px ;
+            animation-timing-function: ease-in-out;
+        }
+
+        @keyframes progress {
+            from {
+                width: 0%;
+            }
+            to {
+                width: 100%;
+            }
+
+
+        }
+    
+    </style>
+</head>
+
+<body>
+    <div class="bar">
+        <div class="progress"></div>
+
+    </div>
+</body>
+
+</html>

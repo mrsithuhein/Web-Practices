@@ -1,0 +1,49 @@
+body {
+    margin: 30px;
+    background-color: #eee;
+}
+
+@keyframes colorChange {
+    0% {
+        background-color: red;
+    }
+
+    25% {
+        background-color: rgb(130, 229, 130);
+        transform: translate(400px, 0) rotate(30deg);
+    }
+
+    50% {
+        background-color: rgb(18, 242, 18);
+        transform: translate(400px,0) translate(0,100px) ;
+    }
+    75%{
+        transform: translate(400px,0) translate(0,100px) translate(-400px,0) rotate(-360deg);
+        background-color: rgb(254, 72, 103);
+    }
+    80%{
+        transform: translate(400px,0) translate(0,100px) translate(-400px,0) translate(0,0);
+    }
+}
+
+
+.box {
+    height: 100px;
+    width: 100px;
+    background-color: red;
+    animation-name: colorChange;
+    animation-duration: 4s;
+    animation-direction: alternate;
+    animation-iteration-count: 2;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    /* box-shadow: 5px 5px 10px gray, -5px -5px 10px gray; */
+}
+
+h1 {
+    color: white;
+    text-shadow: 3px 3px 3px gray;
+}

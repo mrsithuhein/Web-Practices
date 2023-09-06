@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./bootstrap-5.3.1-dist/css/bootstrap.css">
+    <link rel="stylesheet" href="./css/carousel.css">
+</head>
+
+<body>
+    <!-- Nav Bar -->
+
+    <nav class="navbar navbar-expand-lg bg-primary" data-bs-theme="dark">
+        <div class="container">
+            <a class="navbar-brand" href="#">
+                <img src="./images/drawing-svgrepo-com.svg" alt="" width="40" height="40">
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+                aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav ms-auto mb-2 mb-lg-0 ">
+                    <li class="nav-item">
+                        <a class="nav-link " aria-current="page" href="#">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Services</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Product</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Contact</a>
+                    </li>
+
+                </ul>
+
+            </div>
+        </div>
+    </nav>
+
+
+
+    <div id="carouselExample" class="carousel slide m-4">
+        <div class="carousel-indicators">
+            <button type="button" data-bs-target="#carouselExample" data-bs-slide-to="0" class="active"
+                aria-current="true" aria-label="Slide 1"></button>
+            <button type="button" data-bs-target="#carouselExample" data-bs-slide-to="1" aria-label="Slide 2"></button>
+            <button type="button" data-bs-target="#carouselExample" data-bs-slide-to="2" aria-label="Slide 3"></button>
+            <button type="button" data-bs-target="#carouselExample" data-bs-slide-to="3" aria-label="Slide 4"></button>
+
+        </div>
+        <div class="carousel-inner">
+            <div class="carousel-item active">
+                <div class="box bg-primary p-5">
+                    <h1 class="text-light text-center">Page1</h1>
+                    <p class="text-light text-center">Lorem ipsum dolor sit amet consectetur adipisicing elit. Soluta,
+                        mollitia.</p>
+                </div>
+            </div>
+            <div class="carousel-item">
+                <div class="box bg-warning p-5">
+                    <h1 class="text-light text-center">Page2</h1>
+                    <p class="text-light text-center">Lorem ipsum dolor sit amet consectetur adipisicing elit. Soluta,
+                        mollitia.</p>
+                </div>
+            </div>
+            <div class="carousel-item">
+                <div class="box bg-success p-5">
+                    <h1 class="text-light text-center">Page3</h1>
+                    <p class="text-light text-center">Lorem ipsum dolor sit amet consectetur adipisicing elit. Soluta,
+                        mollitia.</p>
+                </div>
+            </div>
+            <div class="carousel-item">
+                <div class="box bg-danger p-5">
+                    <h1 class="text-light text-center">Page4</h1>
+                    <p class="text-light text-center">Lorem ipsum dolor sit amet consectetur adipisicing elit. Soluta,
+                        mollitia.</p>
+                </div>
+            </div>
+        </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#carouselExample" data-bs-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Next</span>
+        </button>
+    </div>
+
+    <a class="btn btn-primary" data-bs-toggle="offcanvas" href="#sidePanel">
+        Link with href
+    </a>
+    <button class="btn btn-primary" type="button" data-bs-toggle="offcanvas" data-bs-target="#sidePanel">
+        Button with data-bs-target
+    </button>
+
+    <div class="offcanvas offcanvas-end" id="sidePanel">
+        <div class="offcanvas-header">
+            <h5>Offcanvas</h5>
+            <button class="btn-close" data-bs-dismiss="offcanvas"></button>
+        </div>
+        <div class="offcanvas-body">
+            <div>
+                Some text as placeholder. In real life you can have the elements you have chosen. Like, text, images,
+                lists, etc.
+            </div>
+
+        </div>
+    </div>
+
+    <p>
+        <button class="btn btn-primary" type="button" data-bs-toggle="collapse" data-bs-target="#collapseWidthExample"
+            aria-expanded="false" aria-controls="collapseWidthExample">
+            Toggle width collapse
+        </button>
+    </p>
+    <div style="min-height: 120px;">
+        <div class="collapse collapse-horizontal" id="collapseWidthExample">
+            <div class="card card-body" style="width: 300px;">
+                This is some placeholder content for a horizontal collapse. It's hidden by default and shown when
+                triggered.
+            </div>
+        </div>
+    </div>
+
+    <div class="dropdown">
+        <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+            Dropdown button
+        </button>
+        <ul class="dropdown-menu">
+            <li><a class="dropdown-item" href="#">Action</a></li>
+            <li><a class="dropdown-item" href="#">Another action</a></li>
+            <li><a class="dropdown-item" href="#">Something else here</a></li>
+        </ul>
+    </div>
+
+
+    <nav class="navbar bg-body-tertiary">
+        <form class="container">
+            <div class="input-group">
+                <span class="input-group-text" id="basic-addon1">$</span>
+                <input type="number" class="form-control" placeholder="Amount" aria-label="Amount"
+                    aria-describedby="basic-addon1">
+            </div>
+        </form>
+    </nav>
+    <script src="./bootstrap-5.3.1-dist/js/bootstrap.bundle.js"></script>
+</body>
+
+</html>
