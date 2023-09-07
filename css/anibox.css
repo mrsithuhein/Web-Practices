@@ -10,52 +10,42 @@ body {
     background-color: azure;
 }
 
+.box h4 {
+    margin-bottom: 10px;
+}
+
+
 .ani-text {
     font-size: 50px;
     margin-bottom: 20px;
     animation: textColor 2s;
     animation-fill-mode: both;
     text-align: center;
+    animation-delay: 0.5s;
 }
 
 @keyframes textColor {
     0% {
         color: red;
         opacity: 0;
-        transform: translateY(-50px);
+        transform: translateY(-30px);
     }
 
     100% {
-        color: green;
+        color: rgb(13, 203, 13);
         opacity: 1;
     }
 }
 
-.boxes {}
-
 .box {
     background-color: white;
-    border: 2px solid black;
+    border: 2px solid rgba(0, 0, 0, 0.115);
     margin-bottom: 20px;
     padding: 20px;
     border-radius: 10px;
-    animation: fadeIn 1s;
-    animation-fill-mode: both;
 }
 
-.boxes .box:nth-child(1) {
-    animation-delay: 0s;
-}
-
-.boxes .box:nth-child(2) {
-    animation-delay: 0.5s;
-}
-
-.boxes .box:nth-child(3) {
-    animation-delay: 1s;
-}
-
-@keyframes fadeIn {
+@keyframes zoomIn {
     0% {
         opacity: 0;
         transform: scale(0.5);
@@ -67,8 +57,132 @@ body {
     }
 }
 
-.box h4 {
-    margin-bottom: 10px;
+.slideIn {
+    animation: slideIn 1s;
+    animation-fill-mode: both;
 }
 
-.box p {}
+@keyframes slideIn {
+    0% {
+        transform: translateY(50px);
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+@keyframes colorChange {
+    0% {
+        background-color: red;
+    }
+
+    25% {
+        background-color: rgb(130, 229, 130);
+        transform: translate(400px, 0) rotate(30deg);
+    }
+
+    50% {
+        background-color: rgb(18, 242, 18);
+        transform: translate(400px, 0) translate(0, 0) rotate(360deg);
+
+    }
+
+    100% {
+        background-color: rgb(34, 124, 250);
+    }
+}
+
+
+.text-box {
+    height: 50px;
+    width: 50px;
+    background-color: rgb(230, 98, 27);
+    animation-name: colorChange;
+    animation-duration: 4s;
+    animation-direction: alternate;
+    animation-delay: 1s;
+    animation-iteration-count: 1;
+    animation-fill-mode: both;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 10px;
+
+    /* box-shadow: 5px 5px 10px gray, -5px -5px 10px gray; */
+}
+
+@keyframes colorChange2 {
+    0% {
+        background-color: red;
+    }
+
+    25% {
+        background-color: rgb(130, 229, 130);
+        transform: translate(-400px, 0) rotate(30deg);
+    }
+
+    50% {
+        background-color: rgb(18, 242, 18);
+        transform: translate(-400px, 0) translate(0, 0) rotate(360deg);
+
+    }
+
+    100% {
+        background-color: rgb(34, 124, 250);
+    }
+}
+
+
+.text-box2 {
+    height: 50px;
+    width: 50px;
+    background-color: rgb(230, 98, 27);
+    animation-name: colorChange2;
+    animation-duration: 4s;
+    animation-direction: alternate;
+    animation-delay: 1s;
+    animation-iteration-count: 1;
+    animation-fill-mode: both;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 10px;
+
+    /* box-shadow: 5px 5px 10px gray, -5px -5px 10px gray; */
+}
+
+.ani-delay-0 {
+    animation-delay: 0;
+}
+
+.ani-delay-half {
+    animation-delay: 0.5s;
+}
+
+.ani-delay-1 {
+    animation-delay: 1s;
+}
+
+.ani-delay-1half {
+    animation-delay: 1.5s;
+}
+
+.ani-delay-2 {
+    animation-delay: 2s;
+}
+
+
+
+h3 {
+    color: white;
+    text-shadow: 3px 3px 3px gray;
+}
+
+.container {
+    display: flex;
+    justify-content: center;
+}
