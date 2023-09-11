@@ -1,0 +1,1 @@
+sass input.scss output.css --style=compressed --watch

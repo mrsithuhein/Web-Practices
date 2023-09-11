@@ -1,0 +1,17 @@
+.table {
+    padding: 20px;
+    width: 50%;
+}
+
+.table-head {
+    background-color: gray;
+    text-align: center;
+}
+
+.table-body {
+  vertical-align: center;
+}
+
+.table-body:hover {
+    background-color: gray;
+}

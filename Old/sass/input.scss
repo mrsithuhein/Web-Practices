@@ -1,0 +1,63 @@
+$font : 'Gill Sans';
+$primary-color : purple;
+
+@use 'part1';
+@use 'part2';
+@use 'part3';
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+$font : 'Gill Sans';
+$primary-color : purple;
+
+
+.nav {
+    box-shadow: 0 0 5px $primary-color;
+    .brand {
+        width: 30px;
+    }
+    .menu {
+        ul {
+            li{
+                display: inline-block;
+                font-family: $font;
+            }
+        }
+    }
+
+}
+
+@mixin button($color : black) {
+    border: 2px solid $color;
+    background-color: $color;
+    padding: 10px 20px;
+    border-radius: 5px;
+}
+
+.btn-primary {
+    @include button(blue)
+}
+
+.btn-danger {
+    @include button(red)
+}
+
+%alert {
+    padding: 30px;
+    background-color: red;
+    animation: bounce 1s;
+    display: inline-block;
+}
+
+.alert-danger {
+    @extend %alert;
+    color: red;
+}
+
+.alert-warning {
+    @extend %alert;
+    color: orange;
+}
