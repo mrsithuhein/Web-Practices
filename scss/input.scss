@@ -1,1 +1,69 @@
-@import '../node_modules/bootstrap/scss/bootstrap.scss'
+@import url("https://fonts.googleapis.com/css2?family=Rubik:wght@400;500&display=swap");
+
+$headings-font-family: "rubik";
+$primary: hsl(231, 69%, 60%);
+$danger:hsl(0, 94%, 66%);
+$btn-padding-y: 10px;
+$btn-padding-x: 20px;
+$navbar-nav-link-padding-x: 30px;
+$nav-link-color: black;
+$nav-underline-link-active-color: hsl(0, 94%, 66%);
+$font-size-base:1.1rem;
+$btn-font-weight: bold;
+
+$spacer: 1rem;
+$spacers: (
+  0: 0,
+  1: $spacer * 0.25,
+  2: $spacer * 0.5,
+  3: $spacer,
+  4: $spacer * 1.5,
+  5: $spacer * 3,
+  6: $spacer * 3.5,
+  7: $spacer * 4,
+  8: $spacer * 4.5,
+  9: $spacer * 6,
+  10: $spacer * 10,
+);
+
+@import "../node_modules/bootstrap/scss/bootstrap.scss";
+
+.navbar-nav {
+  .nav-link {
+    text-transform: uppercase;
+  }
+  .login-btn:hover {
+    color:white;
+  }
+  .login-btn {
+    border: 2px solid $danger;
+    margin-left: 20px;
+  }
+}
+
+.nav {
+  .nav-link:hover{
+    color: black;
+  }
+  .nav-link {
+    padding: 10px 40px;
+  }
+}
+
+#hero {
+  background-image: url(../images/right.svg);
+  background-repeat: no-repeat;
+  background-position: right bottom;
+  background-size: 35%;
+}
+
+#feature {
+  background-image: url(../images/left.svg);
+  background-repeat: no-repeat;
+  background-position: left bottom;
+  background-size: 35%;
+}
+
+.footer {
+  background-color: hsl(229, 31%, 21%);
+}
