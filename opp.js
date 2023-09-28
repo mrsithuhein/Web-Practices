@@ -18,4 +18,3 @@ console.log(obj);
 obj.add = 100;
 console.log(obj);
 
-console.log(obj.#private);
