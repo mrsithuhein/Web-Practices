@@ -8,7 +8,7 @@ console.log(d.toJSON());
 console.log(d.getDate());
 console.log(d.getMonth() + 1);
 console.log(d.getFullYear());
-console.log(d.getHours() - 12);
+console.log(d.getHours());
 console.log(d.getMinutes());
 console.log(d.getSeconds());
 
