@@ -1,4 +1,4 @@
-const points = [34, 15, 2, 52, 19, 56, 30, 57];
+const points = [34, 15, 2, 52, 19, 56, 30, 57, 23];
 
 const product = [
   {
@@ -410,7 +410,7 @@ const allStudentsMark = [
   },
 ];
 
-console.log(points);
+// console.log(points);
 // console.log(points.length);
 // console.log(points.toString());
 // console.log(points.join(" - "));
@@ -431,3 +431,65 @@ console.log(points);
 // const arr = []
 // const arr = new Array("si","thu","hein")
 // console.log(arr);
+
+// let one = 2;
+// let two = 3;
+// const sum = function (...rest) {
+//   console.log(rest);
+//   let total = 0;
+//   for(x of rest){
+//     total +=x;
+//   }
+//   return total;
+// }
+// console.log(sum(1,one,two));
+
+// function test(x,y,...rest){
+//   console.log(x);
+//   console.log(y);
+//   console.log(rest);
+// }
+// test(1,2,3,4,5)
+
+const allSum=function(x){
+  console.log(x);
+  let total = 0;
+  for(a of x){
+    total += a;
+  }
+  return total;
+}
+console.log(allSum(points));
+
+
+const classify = function (x) {
+  const even = [];
+  const odd = [];
+  const result = {
+    even,
+    odd
+  };
+
+  for (let i = 0; i < x.length; i++) {
+    x[i] % 2 === 0 ? even.push(x[i]) : odd.push(x[i])
+  }
+
+  console.log(result);
+  return result;
+}
+classify(points)
+
+
+const divideArrToParts = function (arr, parts) {
+  const partSize = Math.ceil(arr.length / parts);
+  const result = [];
+  for (let i = 0; i < arr.length; i += partSize) {
+    result.push(arr.slice(i, i + partSize));
+    console.log(i);
+  }
+  console.log(result);
+  return result;
+}
+
+divideArrToParts(points, 5);
+

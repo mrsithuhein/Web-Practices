@@ -2,13 +2,13 @@
 
 $headings-font-family: "rubik";
 $primary: hsl(231, 69%, 60%);
-$danger:hsl(0, 94%, 66%);
+$danger: hsl(0, 94%, 66%);
 $btn-padding-y: 10px;
 $btn-padding-x: 20px;
 $navbar-nav-link-padding-x: 30px;
 $nav-link-color: black;
 $nav-underline-link-active-color: hsl(0, 94%, 66%);
-$font-size-base:1.1rem;
+$font-size-base: 1.1rem;
 $btn-font-weight: bold;
 
 $spacer: 1rem;
@@ -33,7 +33,7 @@ $spacers: (
     text-transform: uppercase;
   }
   .login-btn:hover {
-    color:white;
+    color: white;
   }
   .login-btn {
     border: 2px solid $danger;
@@ -42,7 +42,7 @@ $spacers: (
 }
 
 .nav {
-  .nav-link:hover{
+  .nav-link:hover {
     color: black;
   }
   .nav-link {
