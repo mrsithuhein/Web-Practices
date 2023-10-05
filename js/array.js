@@ -451,50 +451,57 @@ const allStudentsMark = [
 // }
 // test(1,2,3,4,5)
 
-const allSum = function (x) {
-  console.log(x);
-  let total = 0;
-  for (a of x) {
-    total += a;
-  }
-  return total;
-};
-// console.log(allSum(points));
+// points.forEach(function (el, idx, arr) {
+//   console.log(el, idx, arr);
+// });
 
-const classify = function (x) {
-  const even = [];
-  const odd = [];
-  const result = {
-    even,
-    odd,
-  };
+console.log(points);
 
-  for (let i = 0; i < x.length; i++) {
-    x[i] % 2 === 0 ? even.push(x[i]) : odd.push(x[i]);
-  }
-
-  console.log(result);
-  return result;
-};
-// classify(points);
-
-const divideArrToParts = function (arr, parts) {
-  const partSize = Math.ceil(arr.length / parts);
-  const result = [];
-  for (let i = 0; i < arr.length; i += partSize) {
-    result.push(arr.slice(i, i + partSize));
-    console.log(i);
-  }
-  console.log(result);
-  return result;
-};
-
-// divideArrToParts(points, 5);
-
-// for (point of points){
-//   console.log(point);
+// function run () {
+//   return "hello";
 // }
 
-points.forEach(function (el, idx, arr) {
-  console.log(el, idx, arr);
-});
+// const run = function(){
+//   return "hello";
+// }
+
+// const run = (x, y) => {
+//   return x + y;
+// };
+
+// console.log(run(2, 3));
+
+// console.log(Array.isArray("hello"));
+// console.log(points.includes(2));
+// console.log(points.indexOf(23));
+// console.log(points.slice(2,5));
+// console.log(points.splice(2,3,"a","b"));
+// console.log(points);
+
+// console.log(points.concat("hello", "some", "test").concat(points));
+
+// const arr = [...points,"hello",...points]
+
+// console.log(arr);
+
+const obj1 = {
+  a: "aaa",
+  b: "bbb",
+  c: "ccc",
+};
+
+const obj2 = {
+  d: "ddd",
+  e: "eee",
+};
+
+const obj3 = {
+  ...obj1,
+  f: "fff",
+  ...obj2,
+};
+
+console.log(obj3);
+
+console.log(Math.max(...points));
+console.log(Math.min(...points));
