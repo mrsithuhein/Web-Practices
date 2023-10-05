@@ -451,34 +451,32 @@ const allStudentsMark = [
 // }
 // test(1,2,3,4,5)
 
-const allSum=function(x){
+const allSum = function (x) {
   console.log(x);
   let total = 0;
-  for(a of x){
+  for (a of x) {
     total += a;
   }
   return total;
-}
-console.log(allSum(points));
-
+};
+// console.log(allSum(points));
 
 const classify = function (x) {
   const even = [];
   const odd = [];
   const result = {
     even,
-    odd
+    odd,
   };
 
   for (let i = 0; i < x.length; i++) {
-    x[i] % 2 === 0 ? even.push(x[i]) : odd.push(x[i])
+    x[i] % 2 === 0 ? even.push(x[i]) : odd.push(x[i]);
   }
 
   console.log(result);
   return result;
-}
-classify(points)
-
+};
+// classify(points);
 
 const divideArrToParts = function (arr, parts) {
   const partSize = Math.ceil(arr.length / parts);
@@ -489,7 +487,14 @@ const divideArrToParts = function (arr, parts) {
   }
   console.log(result);
   return result;
-}
+};
 
-divideArrToParts(points, 5);
+// divideArrToParts(points, 5);
 
+// for (point of points){
+//   console.log(point);
+// }
+
+points.forEach(function (el, idx, arr) {
+  console.log(el, idx, arr);
+});
