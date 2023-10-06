@@ -69,3 +69,13 @@ const shapeCreater = function (icon, type, height, number) {
   }
 };
 shapeCreater("&", "triangle", 4, 2);
+
+
+console.table(student1Mark);
+
+const some = student1Mark.map(subject => {
+  subject.result = subject.mark >= 40 ? "passed" : "failed";
+  return subject;
+
+})
+console.table(some);

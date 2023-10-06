@@ -455,7 +455,7 @@ const allStudentsMark = [
 //   console.log(el, idx, arr);
 // });
 
-console.log(points);
+// console.log(points);
 
 // function run () {
 //   return "hello";
@@ -484,22 +484,22 @@ console.log(points);
 
 // console.log(arr);
 
-const obj1 = {
-  a: "aaa",
-  b: "bbb",
-  c: "ccc",
-};
+// const obj1 = {
+//   a: "aaa",
+//   b: "bbb",
+//   c: "ccc",
+// };
 
-const obj2 = {
-  d: "ddd",
-  e: "eee",
-};
+// const obj2 = {
+//   d: "ddd",
+//   e: "eee",
+// };
 
-const obj3 = {
-  ...obj1,
-  f: "fff",
-  ...obj2,
-};
+// const obj3 = {
+//   ...obj1,
+//   f: "fff",
+//   ...obj2,
+// };
 
 // console.log(obj3);
 
@@ -514,11 +514,21 @@ const obj3 = {
 // });
 // console.log(map);
 
-console.table(student1Mark);
+// console.table(student1Mark);
 
-const some = student1Mark.map(subject => {
-  subject.result = subject.mark >= 40 ? "passed" : "failed";
-  return subject;
+// const mark = student1Mark.map(subject => {
+//   subject.result = subject.mark >= 40 ? "passed" : "failed";
+//   return subject;
+// })
 
-})
-console.table(some);
+// console.table(mark);
+
+// console.table(product);
+
+// const saleProduct = product.map(product => {
+//   product.price += 50;
+//   return product;
+// })
+
+// console.table(saleProduct);
+
