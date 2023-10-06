@@ -278,7 +278,7 @@ const student1Mark = [
   {
     subject: "English",
     short: "en",
-    mark: 72,
+    mark: 35,
   },
   {
     subject: "Mathematic",
@@ -298,7 +298,7 @@ const student1Mark = [
   {
     subject: "Biology",
     short: "bio",
-    mark: 54,
+    mark: 27,
   },
 ];
 
@@ -449,7 +449,7 @@ const allStudentsMark = [
 //   console.log(y);
 //   console.log(rest);
 // }
-// test(1,2,3,4,5)
+// test(1,2,3,4,5)log
 
 // points.forEach(function (el, idx, arr) {
 //   console.log(el, idx, arr);
@@ -501,7 +501,24 @@ const obj3 = {
   ...obj2,
 };
 
-console.log(obj3);
+// console.log(obj3);
 
-console.log(Math.max(...points));
-console.log(Math.min(...points));
+// console.log(Math.max(...points));
+// console.log(Math.min(...points));
+
+// const forEach = points.forEach(point => point);
+// console.log(forEach);
+
+// const map = points.map(point => {
+//   return point + 10
+// });
+// console.log(map);
+
+console.table(student1Mark);
+
+const some = student1Mark.map(subject => {
+  subject.result = subject.mark >= 40 ? "passed" : "failed";
+  return subject;
+
+})
+console.table(some);
