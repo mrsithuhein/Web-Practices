@@ -531,4 +531,58 @@ const allStudentsMark = [
 // })
 
 // console.table(saleProduct);
+// console.log(points);
 
+// const lessThan50 = points.filter(point => point < 50);
+// console.log(lessThan50);
+
+// const find = points.find(point => point === 34);
+// console.log(find);
+
+// const findIndex = points.findIndex(point => point === 52);
+// console.log(findIndex);
+
+// const saleProduct = product.filter((product) => {
+//   return [2,4,7,8,10].includes(product.id)
+// });
+
+// console.table(saleProduct);
+
+// const result = product.reduce((pv,cv) => pv - cv.price,5000)
+// console.log(result);
+
+// class test{
+//   a(){
+//     console.log("aaa");
+//     return this;
+//   }
+
+//   b(){
+//     console.log("bbb");
+//     return this;
+
+//   }
+
+//   c(){
+//     console.log("ccc");
+//     return this;
+
+//   }
+// }
+
+// const obj = new test;
+// console.log(obj.a().b().c().a());
+
+console.log(
+  product
+    .filter((product) => product.price < 100)
+    .reduce((pv, cv) => pv + cv.price, 0)
+);
+
+const fruits = ["apple", "orange", "grape", "lemon", "lime", "banana"];
+console.log(
+  fruits
+    .filter((x) => x.length === 5)
+    .map((x) => x.toUpperCase())
+    .join(", ")
+);
