@@ -573,16 +573,45 @@ const allStudentsMark = [
 // const obj = new test;
 // console.log(obj.a().b().c().a());
 
-console.log(
-  product
-    .filter((product) => product.price < 100)
-    .reduce((pv, cv) => pv + cv.price, 0)
-);
+// // Filter price function
+// const rangePrice = function (start, end) {
+//   let price = product
+//     .filter((product) => product.price > start && product.price < end)
+//     .reduce((pv, cv) => pv + cv.price, 0);
+//   return price;
+// };
+// console.log(rangePrice(0, 300));
 
-const fruits = ["apple", "orange", "grape", "lemon", "lime", "banana"];
-console.log(
-  fruits
-    .filter((x) => x.length === 5)
-    .map((x) => x.toUpperCase())
-    .join(", ")
-);
+// const fruits = ["apple", "orange", "grape", "lemon", "lime", "banana"];
+
+// //Filter word length function
+// const wordCount = function (length) {
+//   let count = fruits
+//     .filter((fruit) => fruit.length === length)
+//     .map((fruit) => fruit.toUpperCase())
+//     .join(", ");
+//   return count;
+// };
+// console.log(wordCount(6));
+
+// //to pascalCase function
+// const toPascalCase = function (word) {
+//   return word
+//     .toLowerCase()
+//     .split(" ")
+//     .map((el) => el.replace(el[0], el[0].toUpperCase()))
+//     .join(" ");
+// };
+// console.log(toPascalCase("san thar yar"));
+
+// window.alert("hello world")
+
+let yourName = window.prompt("what is your name?");
+
+document.write(yourName);
+
+// console.log(yourName);
+
+// let dinnerQ = window.confirm("Have you finished dinner?")
+
+// window.alert(dinnerQ ? "Yes" : "No");
