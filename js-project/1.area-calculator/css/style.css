@@ -1,0 +1,8 @@
+.gp {
+  display: flex;
+  align-items: center;
+}
+
+.result {
+  width: 350px;
+}
