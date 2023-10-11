@@ -604,14 +604,4 @@ const allStudentsMark = [
 // };
 // console.log(toPascalCase("san thar yar"));
 
-// window.alert("hello world")
 
-let yourName = window.prompt("what is your name?");
-
-document.write(yourName);
-
-// console.log(yourName);
-
-// let dinnerQ = window.confirm("Have you finished dinner?")
-
-// window.alert(dinnerQ ? "Yes" : "No");
