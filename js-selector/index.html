@@ -8,14 +8,60 @@
     <link rel="stylesheet" href="./node_modules/bootstrap/dist/css/bootstrap.min.css">
 </head>
 
-<body>
+<body class="m-3">
     <!-- <h1 style="color:red ; background-color: yellow;">Hello World</h1> -->
 
-    <h1 class="bg-primary-subtle text-primary text-center p-3 m-2 rounded font-monospace">Hello World</h1>
+    <!-- <h1 class="bg-primary-subtle text-primary text-center p-3 m-2 rounded font-monospace">Hello World</h1> -->
+    <!-- <a href="https://google.com" class="btn btn-primary">Google</a> -->
+<div class="mb-3"> 
+    <div class="form-check">
+        <input class="form-check-input" type="radio" name="gender" id="male" value="male">
+        <label class="form-check-label" for="male">
+        Male
+        </label>
+      </div>
+      <div class="form-check">
+        <input class="form-check-input" type="radio" name="gender" id="female" value="female">
+        <label class="form-check-label" for="female">
+          Female
+        </label>
+      </div>
+</div>
+
+    <select name="" id="nation" class="form-select mb-3">
+        <option value="mm">Myanmar</option>
+        <option value="kr">Korea</option>
+        <option value="ch">China</option>
+        <option value="jp">Japan</option>
+    </select>
+
+    <button id="btn" class="btn btn-primary">Run</button>
 
 
     <script>
-        const h1 = document.querySelector("h1")
+        const nation = document.querySelector("#nation")
+        const btn = document.querySelector("#btn")
+        const gender = document.querySelectorAll("[name='gender']")
+
+
+        btn.addEventListener("click", () => {
+            console.log(document.querySelector("[name='gender']:checked").value);
+            // console.log([...gender].find(el => el.checked === true).value);
+            console.log(nation.value);
+        })
+        // const h1 = document.querySelector("h1")
+
+        // const link = document.querySelector("a")
+        // link.setAttribute("href","https://youtube.com")
+        // link.setAttribute("target", "_blank")
+        // link.setAttribute("sth","handsome")
+        // console.log(link.getAttribute("href"));
+        // link.href = "https://youtube.com"
+
+        // link.target = "_blank"
+        // console.log(link.href);
+
+        // console.log(window.getComputedStyle(h1).backgroundColor);
         // console.log(h1.style.backgroundColor);
         // console.log(h1.style.color);
 
@@ -31,6 +77,8 @@
         
         // h1.className= "text-danger fw-bold"
     </script>
+
+    <script src="./node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 
 </html>
