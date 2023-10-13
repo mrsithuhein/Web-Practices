@@ -13,20 +13,20 @@
 
     <!-- <h1 class="bg-primary-subtle text-primary text-center p-3 m-2 rounded font-monospace">Hello World</h1> -->
     <!-- <a href="https://google.com" class="btn btn-primary">Google</a> -->
-<div class="mb-3"> 
-    <div class="form-check">
-        <input class="form-check-input" type="radio" name="gender" id="male" value="male">
-        <label class="form-check-label" for="male">
-        Male
-        </label>
-      </div>
-      <div class="form-check">
-        <input class="form-check-input" type="radio" name="gender" id="female" value="female">
-        <label class="form-check-label" for="female">
-          Female
-        </label>
-      </div>
-</div>
+    <div class="mb-3">
+        <div class="form-check">
+            <input class="form-check-input" type="radio" name="gender" id="male" value="male">
+            <label class="form-check-label" for="male">
+                Male
+            </label>
+        </div>
+        <div class="form-check">
+            <input class="form-check-input" type="radio" name="gender" id="female" value="female">
+            <label class="form-check-label" for="female">
+                Female
+            </label>
+        </div>
+    </div>
 
     <select name="" id="nation" class="form-select mb-3">
         <option value="mm">Myanmar</option>
@@ -35,10 +35,21 @@
         <option value="jp">Japan</option>
     </select>
 
-    <button id="btn" class="btn btn-primary">Run</button>
-
+    <button id="btn" class="btn btn-primary btn-lg">Run</button>
 
     <script>
+        const nation = document.querySelector("#nation")
+        const btn = document.querySelector("#btn")
+
+        const run = () => {
+            console.log(document.querySelector("[name='gender']:checked").value);
+            console.log(nation.value);
+        }
+
+        btn.addEventListener("click", run)
+    </script>
+
+    <!-- <script>
         const nation = document.querySelector("#nation")
         const btn = document.querySelector("#btn")
         const gender = document.querySelectorAll("[name='gender']")
@@ -76,7 +87,7 @@
         // h1.classList.add("fw-bold")
         
         // h1.className= "text-danger fw-bold"
-    </script>
+    </script> -->
 
     <script src="./node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
 </body>
