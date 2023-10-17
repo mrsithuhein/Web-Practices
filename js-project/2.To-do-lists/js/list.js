@@ -2,9 +2,14 @@ const textInput = document.querySelector("#textInput");
 const addBtn = document.querySelector("#addBtn");
 const doneListCounter = document.querySelector("#doneListCounter");
 const totalListCounter = document.querySelector("#totalListCounter");
+const lists = document.querySelector("#lists");
+
 
 const countList = () => {
   totalListCounter.innerText = lists.querySelectorAll(".list").length;
+  doneListCounter.innerText = lists.querySelectorAll(
+    ".list-checker [type='checkbox']:checked"
+  );
 };
 
 const createList = (listText) => {
@@ -12,7 +17,7 @@ const createList = (listText) => {
   list.classList.add("list");
   list.innerHTML = `
     <div class="border border-primary p-2 d-flex justify-content-between mb-2">
-    <div class="form-check">
+    <div class="form-check list-checker">
         <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked">
         <label class="form-check-label" for="flexCheckChecked">
             ${listText}
@@ -34,7 +39,11 @@ const createList = (listText) => {
   deleteBtn.addEventListener("click", () => {
     const confirm = window.confirm("Are you sure to delete?");
     confirm && list.remove();
-    
+    countList();
+  });
+
+  const listChecker = list.querySelectorAll(".list-checker");
+  listChecker.addEventListener("click", () => {
     countList();
   });
 
