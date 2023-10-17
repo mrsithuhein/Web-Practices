@@ -4,12 +4,11 @@ const doneListCounter = document.querySelector("#doneListCounter");
 const totalListCounter = document.querySelector("#totalListCounter");
 const lists = document.querySelector("#lists");
 
-
 const countList = () => {
   totalListCounter.innerText = lists.querySelectorAll(".list").length;
   doneListCounter.innerText = lists.querySelectorAll(
     ".list-checker [type='checkbox']:checked"
-  );
+  ).length;
 };
 
 const createList = (listText) => {
@@ -42,7 +41,7 @@ const createList = (listText) => {
     countList();
   });
 
-  const listChecker = list.querySelectorAll(".list-checker");
+  const listChecker = list.querySelector(".list-checker");
   listChecker.addEventListener("click", () => {
     countList();
   });
