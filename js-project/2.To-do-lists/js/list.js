@@ -3,29 +3,45 @@ const addBtn = document.querySelector("#addBtn");
 const doneListCounter = document.querySelector("#doneListCounter");
 const totalListCounter = document.querySelector("#totalListCounter");
 
-addBtn.addEventListener("click", () => {
-  console.log(textInput.value);
+const countList = () => {
+  totalListCounter.innerText = lists.querySelectorAll(".list").length;
+};
+
+const createList = (listText) => {
   const list = document.createElement("div");
   list.classList.add("list");
   list.innerHTML = `
-    <div class="border border-primary p-3 d-flex justify-content-between">
+    <div class="border border-primary p-2 d-flex justify-content-between mb-2">
     <div class="form-check">
-        <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked"
-            checked>
+        <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked">
         <label class="form-check-label" for="flexCheckChecked">
-            something
+            ${listText}
         </label>
     </div>
     <div>
-        <button class="btn btn-outline-primary">
+        <button class="btn btn-outline-primary editBtn">
             <i class="bi bi-pencil"></i>
         </button>
-        <button class="btn btn-outline-primary">
+        <button class="btn btn-outline-primary deleteBtn">
             <i class="bi bi-trash3"></i>
         </button>
     </div>
 </div>
     `;
-    console.log(list);
   textInput.value = null;
+
+  const deleteBtn = list.querySelector(".deleteBtn");
+  deleteBtn.addEventListener("click", () => {
+    const confirm = window.confirm("Are you sure to delete?");
+    confirm && list.remove();
+    
+    countList();
+  });
+
+  return list;
+};
+
+addBtn.addEventListener("click", () => {
+  lists.append(createList(textInput.value));
+  countList();
 });
