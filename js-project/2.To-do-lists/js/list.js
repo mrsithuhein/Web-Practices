@@ -34,7 +34,7 @@ const createList = (listText) => {
     <div class="border border-primary p-2 d-flex justify-content-between mb-2">
     <div class="form-check list-checker">
         <input class="form-check-input" type="checkbox" value="" id="${checkerId}">
-        <label class="form-check-label" for="${checkerId}">
+        <label class="form-check-label list-label" for="${checkerId}">
             ${listText}
         </label>
     </div>
@@ -57,6 +57,21 @@ const createList = (listText) => {
     countList();
   });
 
+  const editBtn = list.querySelector(".editBtn");
+  const listLabel = list.querySelector(".list-label");
+
+  editBtn.addEventListener("click", () => {
+    const editInput = document.createElement("input");
+    editInput.classList.add("form-control");
+    editInput.value = listLabel.innerText;
+    listLabel.innerText = null;
+    listLabel.append(editInput);
+
+    editInput.addEventListener("change", () => {
+      listLabel.innerText = editInput.value;
+    });
+  });
+
   const listChecker = list.querySelector(".list-checker");
   listChecker.addEventListener("click", () => {
     countList();
@@ -66,6 +81,10 @@ const createList = (listText) => {
 };
 
 addBtn.addEventListener("click", () => {
-  lists.append(createList(textInput.value));
-  countList();
+  if (textInput.value != "") {
+    lists.append(createList(textInput.value));
+    countList();
+  } else {
+    window.alert("Please input something!!");
+  }
 });
