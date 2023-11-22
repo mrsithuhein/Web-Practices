@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <!-- <link rel="stylesheet" href="./node_modules/bootstrap/dist/css/bootstrap.min.css"> -->
+    <style>
+      .tc {
+        display: flex;
+        justify-content: space-between;
+      }
+      #output {
+        font-size: 16px;
+        font-family: "Purisa";
+      }
+    </style>
+  </head>
+  <body>
+    <fieldset class="tc">
+      <legend>Text Control</legend>
+      <div>
+        <label for="inputText">Text Input</label>
+        <input type="text" name="" id="inputText" />
+      </div>
+      <div>
+        <label for="inputColor">Color</label>
+        <input type="color" name="" id="inputColor" />
+      </div>
+      <div>
+        <label for="inputSize">Font size</label>
+        <input
+          type="range"
+          name=""
+          min="16"
+          value="16"
+          max="100"
+          id="inputSize"
+        />
+      </div>
+      <div>
+        <label for="inputFont">Font</label>
+        <select name="" id="inputFont"></select>
+      </div>
+    </fieldset>
+
+    <h1 id="output"></h1>
+
+    <script>
+      //selector
+      const inputText = document.querySelector("#inputText");
+      const inputColor = document.querySelector("#inputColor");
+      const inputSize = document.querySelector("#inputSize");
+      const output = document.querySelector("#output");
+      const inputFont = document.querySelector("#inputFont");
+
+      const fonts = ["Purisa", "Twgl", "Uroob"];
+
+      //function
+      // const createOption = (text, value) => {
+      //   const option = document.createElement("option");
+      //   option.innerText = text;
+      //   option.value = value;
+      //   return option;
+      // };
+
+      //process
+      fonts.forEach((font) => {
+        inputFont.append(new Option(font, font));
+      });
+      inputText.addEventListener("keyup", () => {
+        output.innerText = inputText.value;
+      });
+      inputColor.addEventListener("change", () => {
+        output.style.color = inputColor.value;
+      });
+      inputSize.addEventListener("change", () => {
+        output.style.fontSize = inputSize.value + "px";
+      });
+      inputFont.addEventListener("change", () => {
+        output.style.fontFamily = inputFont.value;
+      });
+    </script>
+  </body>
+</html>
