@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <form action="https://mms-it.com" id="formData">
+      <input type="text" name="your_name" id="name" required/>
+      <input type="email" name="your_email" />
+      <input type="date" name="your_birthdate" />
+      <input type="file" name="your_file" />
+      <button>submit</button>
+    </form>
+
+    <script>
+      const formData = document.querySelector("#formData");
+      //   const name = document.querySelector("#name");
+
+      //   name.addEventListener("focus",() => {
+      //     console.log("you focus");
+      //   })
+
+      //   name.addEventListener("blur",() => {
+      //     console.log("you blur");
+      //   })
+
+      formData.addEventListener("submit", (event) => {
+        event.preventDefault();
+        const data = new FormData(formData);
+
+        data.append("your_job", "developer");
+        console.log(data.get("your_name"));
+        console.log(data.get("your_email"));
+        console.log(data.get("your_birthdate"));
+        console.log(data.get("your_file"));
+        console.log(data.get("your_job"));
+
+        formData.reset();
+      });
+    </script>
+  </body>
+</html>
