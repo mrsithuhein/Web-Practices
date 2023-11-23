@@ -1,9 +1,10 @@
 @import url("https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@400;700&family=Young+Serif&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap");
 @import "../node_modules/bootstrap-icons/font/bootstrap-icons.min.css";
 @import "../node_modules/animate.css/animate.min.css";
 
 $headings-font-family: "Roboto Condensed", sans-serif;
-$font-family-sans-serif: "Young Serif", serif;
+$font-family-sans-serif: "Montserrat", sans-serif;
 
 $primary: black;
 
@@ -13,5 +14,12 @@ $input-border-color: $primary;
 $input-border-width: 2px;
 $form-check-input-border-radius: 0;
 $btn-border-radius: 0;
+
+.record-empty-row:last-child {
+  display: table-row;
+}
+.record-empty-row {
+  display: none;
+}
 
 @import "../node_modules/bootstrap/scss/bootstrap.scss";
