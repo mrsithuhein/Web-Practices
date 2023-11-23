@@ -46,7 +46,7 @@ const createList = (listText) => {
   const list = document.createElement("div");
   list.classList.add("list");
   list.innerHTML = `
-    <div class="border border-primary p-2 d-flex justify-content-between mb-2">
+    <div class="animate__animated animate__slideInLeft border border-primary p-2 d-flex justify-content-between mb-2">
     <div class="form-check list-checker">
         <input class="form-check-input" type="checkbox" value="" id="${checkerId}">
         <label class="form-check-label list-label" for="${checkerId}">
@@ -69,8 +69,17 @@ const createList = (listText) => {
   const deleteBtn = list.querySelector(".deleteBtn");
   deleteBtn.addEventListener("click", () => {
     const confirm = window.confirm("Are you sure to delete?");
-    confirm && list.remove();
-    countList();
+    if (confirm) {
+      list
+        .querySelector(".animate__animated")
+        .classList.add("animate__fadeOut");
+      list
+        .querySelector(".animate__animated")
+        .addEventListener("animationend", () => {
+          list.remove();
+          countList();
+        });
+    }
   });
 
   //edit button to edit list
@@ -93,6 +102,12 @@ const createList = (listText) => {
   //when list is checked to call count list function to update done list count
   const listChecker = list.querySelector(".list-checker");
   listChecker.addEventListener("click", () => {
+    list
+      .querySelector(".list-label")
+      .classList.toggle("text-decoration-line-through");
+    list
+      .querySelector(".animate__animated")
+      .classList.replace("animate__slideInLeft", "animate__shakeX");
     countList();
   });
 
