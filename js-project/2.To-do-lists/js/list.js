@@ -14,7 +14,12 @@ const countList = () => {
   ).length;
 
   if (totalLists === 0) {
-    lists.innerHTML = `<p class="text-center empty-state">There is no list</p>`;
+    lists.innerHTML = `
+    <div class="text-center mt-5 empty-state">
+    <img src="./images/empty.svg" class="w-50 mb-4" alt="">
+    <p class="text-center">There is no list</p>
+    </div>
+    `;
   } else {
     lists.querySelector(".empty-state")?.remove();
   }
