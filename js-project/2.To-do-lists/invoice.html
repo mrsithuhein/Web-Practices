@@ -15,7 +15,7 @@
               <h1 class="fw-bold">MMS Solution</h1>
               <h3 class="fw-bold text-black-50">Invoice</h3>
             </main>
-            <form action="">
+            <form action="" id="recordForm">
               <div
                 class="row align-items-end bg-secondary-subtle p-3 rounded-3"
               >
@@ -23,7 +23,7 @@
                   <label for="productSelect">Select Product</label>
                   <select
                     class="form-select"
-                    name=""
+                    name="product_select"
                     id="productSelect"
                   ></select>
                 </div>
@@ -31,14 +31,16 @@
                   <label for="quantityInput">Quantity</label>
                   <input
                     type="number"
-                    class="form-control"
+                    class="form-control text-center"
+                    name="quantity_input"
                     id="quantityInput"
                     min="0"
+                    required
                   />
                 </div>
                 <div class="col">
                   <button
-                    id="addRecordBtn"
+                    id="recordBtn"
                     class="btn btn-primary w-100 rounded-2 fw-bold"
                   >
                     Add Record
@@ -74,5 +76,7 @@
         </div>
       </div>
     </main>
+
+    <script src="./js/invoice.js"></script>
   </body>
 </html>
