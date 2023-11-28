@@ -45,18 +45,36 @@ const costTotal = app.querySelector("#costTotal");
 // };
 
 const createRecordRow = (product, quantity) => {
-  const recordRow = document.createElement("tr");
-  recordRow.classList.add("record-row");
-  recordRow.setAttribute("product-id", product.id);
+  const tr = document.createElement("tr");
+  tr.classList.add("record-row");
+  tr.setAttribute("product-id", product.id);
   const cost = product.price * quantity;
-  recordRow.innerHTML = `
+  tr.innerHTML = `
   <td class="counter"></td>
   <td>${product.name}</td>
   <td class="text-end">${product.price}</td>
-  <td class="text-end quantity-row">${quantity}</td>
-  <td class="text-end cost-row">${cost}</td>
+  <td class="text-end quantity-btn-control">
+  <button class="btn btn-sm quantity-minus-btn"><i class="bi bi-dash"></i></button>
+  <span class="quantity-row">${quantity}</span>
+  <button class="btn btn-sm quantity-plus-btn"><i class="bi bi-plus"></i></button>
+  </td>
+  <td class="text-end">
+  <span class="cost-row">${cost}</span>
+  <span><button class="btn btn-primary del-btn"><i class="bi bi-trash3"></i></button></span>
+  </td>
   `;
-  return recordRow;
+
+  const delRow = () => {
+    if (confirm("Are you sure to delete?")) {
+      tr.remove();
+      sumCostTotal();
+    }
+  };
+  const delBtn = tr.querySelector(".del-btn");
+  delBtn.addEventListener("click", () => {
+    delRow();
+  });
+  return tr;
 };
 
 const sumCostTotal = () => {
