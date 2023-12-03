@@ -44,27 +44,30 @@ body {
   opacity: 0;
   pointer-events: none;
   transform: translateX(10px);
-  
-}
-
-.record-row:hover .del-btn,.record-row:hover .quantity-minus-btn,.record-row:hover .quantity-plus-btn{
-  opacity: 100%;
-  pointer-events: all;
-  transform: translateX(0);
-}
-
-
-.quantity-row {
-  display: inline-block;
-  width: 10px;
 }
 
 .quantity-minus-btn {
   opacity: 0;
+  transform: translateX(-5px);
 }
 
 .quantity-plus-btn {
   opacity: 0;
+  transform: translateX(5px);
+}
+
+.record-row:hover .del-btn,
+.record-row:hover .quantity-minus-btn,
+.record-row:hover .quantity-plus-btn {
+  opacity: 100%;
+  pointer-events: all;
+  transform: translateX(0px);
+  transition: 0.5s;
+}
+
+.quantity-row {
+  display: inline-block;
+  width: 10px;
 }
 
 @import "../node_modules/bootstrap/scss/bootstrap.scss";

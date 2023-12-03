@@ -43,6 +43,27 @@ const costTotal = app.querySelector("#costTotal");
 //   option.innerText = product.name;
 //   return option;
 // };
+const addNewRecord = (product, quantity) => {
+  records.append(createRecordRow(product, quantity));
+};
+
+const updateExistedRecord = (product, quantity) => {
+  const row = app.querySelector(`[product-id='${product.id}']`);
+  const currentQuantity = row.querySelector(".quantity-row");
+  const currentCost = row.querySelector(".cost-row");
+  if (quantity < 0) {
+    if (currentQuantity.innerText > 1) {
+      currentQuantity.innerText =
+        parseFloat(currentQuantity.innerText) + parseFloat(quantity);
+      currentCost.innerText = currentQuantity.innerText * product.price;
+    }
+  } else {
+    currentQuantity.innerText =
+      parseFloat(currentQuantity.innerText) + parseFloat(quantity);
+    currentCost.innerText = currentQuantity.innerText * product.price;
+  }
+  sumCostTotal();
+};
 
 const createRecordRow = (product, quantity) => {
   const tr = document.createElement("tr");
@@ -74,6 +95,17 @@ const createRecordRow = (product, quantity) => {
   delBtn.addEventListener("click", () => {
     delRow();
   });
+
+  const quantityPlusBtn = tr.querySelector(".quantity-plus-btn");
+  quantityPlusBtn.addEventListener("click", () => {
+    updateExistedRecord(product, 1);
+  });
+
+  const quantityMinusBtn = tr.querySelector(".quantity-minus-btn");
+  quantityMinusBtn.addEventListener("click", () => {
+    updateExistedRecord(product, -1);
+  });
+
   return tr;
 };
 
@@ -87,12 +119,7 @@ const sumCostTotal = () => {
   });
 };
 
-//Process
-products.forEach((product) =>
-  productSelect.append(new Option(product.name, product.id))
-);
-
-recordForm.addEventListener("submit", (event) => {
+const handleRecordForm = (event) => {
   event.preventDefault();
   const data = new FormData(recordForm);
   const currentProduct = products.find(
@@ -102,18 +129,19 @@ recordForm.addEventListener("submit", (event) => {
   const isExistedProduct = app.querySelector(
     `[product-id='${currentProduct.id}']`
   );
-
   if (isExistedProduct) {
-    const currentQuantity = isExistedProduct.querySelector(".quantity-row");
-    const currentCost = isExistedProduct.querySelector(".cost-row");
-    currentQuantity.innerText =
-      parseFloat(currentQuantity.innerText) +
-      parseFloat(data.get("quantity_input"));
-    currentCost.innerText = currentQuantity.innerText * currentProduct.price;
+    updateExistedRecord(currentProduct, data.get("quantity_input"));
   } else {
-    records.append(createRecordRow(currentProduct, data.get("quantity_input")));
+    addNewRecord(currentProduct, data.get("quantity_input"));
   }
 
   sumCostTotal();
   recordForm.reset();
-});
+};
+
+//Process
+products.forEach((product) =>
+  productSelect.append(new Option(product.name, product.id))
+);
+
+recordForm.addEventListener("submit", handleRecordForm);
