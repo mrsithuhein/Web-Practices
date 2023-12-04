@@ -15,7 +15,7 @@
               <h1 class="fw-bold">MMS Solution</h1>
               <h3 class="fw-bold text-black-50">Invoice</h3>
             </main>
-            <form action="" id="recordForm">
+            <form action="" id="recordForm" class="d-print-none ">
               <div
                 class="row align-items-end bg-secondary-subtle p-3"
               >
@@ -34,14 +34,14 @@
                     class="form-control text-center"
                     name="quantity_input"
                     id="quantityInput"
-                    min="0"
+                    min="1"
                     required
                   />
                 </div>
                 <div class="col">
                   <button
                     id="recordBtn"
-                    class="btn btn-primary w-100 fw-bold"
+                    class="btn btn-primary h-100 w-100 fw-bold"
                   >
                     Add Record
                   </button>
@@ -71,11 +71,18 @@
                 </tr>
               </tfoot>
             </table>
+            <p class="d-none d-print-block">ဝယ်ယူအားပေးမှုကို ကျေးဇူးတင်ပါသည်။</p>
+            <div class="text-end d-print-none">
+              <button class="btn btn-primary printer">
+              <i class="bi bi-printer"></i>
+              Print
+            </button>
+          </div>
           </div>
         </div>
       </div>
     </main>
-
+    <script src="./node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
     <script src="./js/invoice.js"></script>
   </body>
 </html>

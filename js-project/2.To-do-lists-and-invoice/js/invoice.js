@@ -35,6 +35,7 @@ const quantityInput = app.querySelector("#quantityInput");
 const recordBtn = app.querySelector("#recordBtn");
 const records = app.querySelector("#records");
 const costTotal = app.querySelector("#costTotal");
+const printer = app.querySelector(".printer")
 
 //Functions
 // const createFormOption = (product) => {
@@ -145,3 +146,7 @@ products.forEach((product) =>
 );
 
 recordForm.addEventListener("submit", handleRecordForm);
+
+printer.addEventListener("click",() => {
+  print();
+})
