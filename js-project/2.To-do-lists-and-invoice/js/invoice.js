@@ -35,7 +35,7 @@ const quantityInput = app.querySelector("#quantityInput");
 const recordBtn = app.querySelector("#recordBtn");
 const records = app.querySelector("#records");
 const costTotal = app.querySelector("#costTotal");
-const printer = app.querySelector(".printer")
+const printer = app.querySelector(".printer");
 
 //Functions
 // const createFormOption = (product) => {
@@ -52,17 +52,9 @@ const updateExistedRecord = (product, quantity) => {
   const row = app.querySelector(`[product-id='${product.id}']`);
   const currentQuantity = row.querySelector(".quantity-row");
   const currentCost = row.querySelector(".cost-row");
-  if (quantity < 0) {
-    if (currentQuantity.innerText > 1) {
-      currentQuantity.innerText =
-        parseFloat(currentQuantity.innerText) + parseFloat(quantity);
-      currentCost.innerText = currentQuantity.innerText * product.price;
-    }
-  } else {
-    currentQuantity.innerText =
-      parseFloat(currentQuantity.innerText) + parseFloat(quantity);
-    currentCost.innerText = currentQuantity.innerText * product.price;
-  }
+  currentQuantity.innerText =
+    parseFloat(currentQuantity.innerText) + parseFloat(quantity);
+  currentCost.innerText = currentQuantity.innerText * product.price;
   sumCostTotal();
 };
 
@@ -104,7 +96,11 @@ const createRecordRow = (product, quantity) => {
 
   const quantityMinusBtn = tr.querySelector(".quantity-minus-btn");
   quantityMinusBtn.addEventListener("click", () => {
-    updateExistedRecord(product, -1);
+    const row = app.querySelector(`[product-id='${product.id}']`);
+    const currentQuantity = row.querySelector(".quantity-row");
+    if (currentQuantity.innerText > 1) {
+      updateExistedRecord(product, -1);
+    }
   });
 
   return tr;
@@ -140,13 +136,27 @@ const handleRecordForm = (event) => {
   recordForm.reset();
 };
 
+const inventoryLists = app.querySelector("#inventoryLists");
+const createInventory = (product) => {
+  const li = document.createElement("li");
+  li.classList.add("list-group-item");
+  li.innerHTML = `
+<div class="row justify-content-between">
+  <div class="col-8">${product.name}</div>
+  <div class="col-4 text-end text-black-50">$<span>${product.price}</span></div>
+</div>
+`;
+  return li;
+};
+
 //Process
-products.forEach((product) =>
-  productSelect.append(new Option(product.name, product.id))
-);
+products.forEach((product) => {
+  productSelect.append(new Option(product.name, product.id));
+  inventoryLists.append(createInventory(product));
+});
 
 recordForm.addEventListener("submit", handleRecordForm);
 
-printer.addEventListener("click",() => {
+printer.addEventListener("click", () => {
   print();
-})
+});
