@@ -36,6 +36,7 @@ const recordBtn = app.querySelector("#recordBtn");
 const records = app.querySelector("#records");
 const costTotal = app.querySelector("#costTotal");
 const printer = app.querySelector(".printer");
+const newItemForm = app.querySelector("#newItemForm");
 
 //Functions
 // const createFormOption = (product) => {
@@ -137,7 +138,7 @@ const handleRecordForm = (event) => {
 };
 
 const inventoryLists = app.querySelector("#inventoryLists");
-const createInventory = (product) => {
+const createNewItem = (product) => {
   const li = document.createElement("li");
   li.classList.add("list-group-item");
   li.innerHTML = `
@@ -149,14 +150,33 @@ const createInventory = (product) => {
   return li;
 };
 
+const handleNewItemForm = (event) => {
+  event.preventDefault();
+  const data = new FormData(newItemForm);
+  let newItem = {};
+  newItem.id = products[products.length - 1].id + 1;
+  newItem.name = data.get("item_name");
+  newItem.price = data.get("item_price");
+  inventoryLists.append(createNewItem(newItem));
+  products.push(newItem);
+  productSelect.append(new Option(newItem.name, newItem.id));
+  newItemForm.reset();
+};
+
 //Process
 products.forEach((product) => {
   productSelect.append(new Option(product.name, product.id));
-  inventoryLists.append(createInventory(product));
+  inventoryLists.append(createNewItem(product));
 });
 
 recordForm.addEventListener("submit", handleRecordForm);
+newItemForm.addEventListener("submit", handleNewItemForm);
 
 printer.addEventListener("click", () => {
   print();
+  const recordRows = records.querySelectorAll(".record-row")
+  recordRows.forEach((row) => {
+    row.remove();
+  })
+  costTotal.innerText = 0;
 });
