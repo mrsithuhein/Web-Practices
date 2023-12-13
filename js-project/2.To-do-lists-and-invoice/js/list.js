@@ -128,3 +128,14 @@ addBtn.addEventListener("click", () => {
     window.alert("Please input something!!");
   }
 });
+
+textInput.addEventListener("keyup", (event) => {
+  if (event.key === "Enter") {
+    if (textInput.value != "") {
+      lists.append(createList(textInput.value));
+      countList();
+    } else {
+      window.alert("Please input something!!");
+    }
+  }
+});

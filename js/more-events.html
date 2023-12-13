@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <style>
+    #one,
+    #two {
+      border: 2px solid black;
+      padding: 30px;
+    }
+    #one {
+      margin-bottom: 20px;
+    }
+  </style>
+  <body>
+    <!-- <div id="one">
+      <div id="two">
+        <button id="three">Three</button>
+      </div>
+    </div>
+
+    <input id="name" type="text" />
+
+    <h1 id="heading">Original</h1>
+    <button id="changeBtn">Change</button>
+
+    <button id="multipleBtn">multiple</button> -->
+
+    <!-- <script>
+      const one = document.querySelector("#one");
+      const two = document.querySelector("#two");
+      const three = document.querySelector("#three");
+      const name = document.querySelector("#name");
+      const heading = document.querySelector("#heading");
+      const changeBtn = document.querySelector("#changeBtn");
+      const multipleBtn = document.querySelector("#multipleBtn");
+
+      //multiple events
+      const events = ["click", "mouseenter", "mouseout"];
+      events.forEach((el) => {
+        multipleBtn.addEventListener(el, (e) => {
+          console.log(e.type);
+        });
+      });
+
+      //bubbling
+      one.addEventListener("click", () => {
+        console.log("one");
+      });
+
+      two.addEventListener("click", () => {
+        console.log("two");
+      });
+
+      three.addEventListener("click", (event) => {
+        event.stopPropagation();
+        console.log("three");
+      });
+
+      name.addEventListener("keyup", (event) => {
+        if (event.key === "Enter") {
+          console.log("enter");
+        }
+      });
+
+      let counter = 1;
+
+      const handleChangeBtn = () => {
+        heading.innerText = "New One";
+        console.log("worked");
+        changeBtn.removeEventListener("click", handleChangeBtn);
+      };
+
+      changeBtn.addEventListener("click", handleChangeBtn);
+    </script> -->
+    <input type="text" />
+    <ul>
+      <li>apple</li>
+      <li>orange</li>
+      <li>grape</li>
+    </ul>
+
+    <script>
+      const ul = document.querySelector("ul");
+      const input = document.querySelector("input");
+
+        ul.addEventListener("click",(e) => {
+            console.log(e.target.innerText);
+        })
+
+      input.addEventListener("keyup", (event) => {
+        if (event.key === "Enter") {
+          const li = document.createElement("li");
+          li.innerText = input.value;
+          ul.append(li);
+          input.value = null;
+        }
+      });
+    </script>
+  </body>
+</html>
