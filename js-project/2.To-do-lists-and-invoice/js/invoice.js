@@ -99,9 +99,7 @@ const createRecordRow = (product, quantity) => {
   quantityMinusBtn.addEventListener("click", () => {
     const row = app.querySelector(`[product-id='${product.id}']`);
     const currentQuantity = row.querySelector(".quantity-row");
-    if (currentQuantity.innerText > 1) {
-      updateExistedRecord(product, -1);
-    }
+    currentQuantity.innerText > 1 && updateExistedRecord(product, -1)
   });
 
   return tr;
