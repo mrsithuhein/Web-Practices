@@ -76,6 +76,7 @@
 
       changeBtn.addEventListener("click", handleChangeBtn);
     </script> -->
+    <h1>something</h1>
     <input type="text" />
     <ul>
       <li>apple</li>
@@ -84,12 +85,14 @@
     </ul>
 
     <script>
+      const h1 = document.querySelector("h1");
       const ul = document.querySelector("ul");
       const input = document.querySelector("input");
-
-        ul.addEventListener("click",(e) => {
-            console.log(e.target.innerText);
-        })
+      h1.contentEditable = true;
+      console.log(h1.contentEditable);
+      ul.addEventListener("click", (e) => {
+        console.log(e.target.innerText);
+      });
 
       input.addEventListener("keyup", (event) => {
         if (event.key === "Enter") {
