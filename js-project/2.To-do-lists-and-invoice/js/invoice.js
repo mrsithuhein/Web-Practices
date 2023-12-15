@@ -49,13 +49,13 @@ const addNewRecord = (product, quantity) => {
   records.append(createRecordRow(product, quantity));
 };
 
-const updateExistedRecord = (product, quantity) => {
-  const row = app.querySelector(`[product-id='${product.id}']`);
+const updateExistedRecord = ({id,price}, quantity) => {
+  const row = app.querySelector(`[product-id='${id}']`);
   const currentQuantity = row.querySelector(".quantity-row");
   const currentCost = row.querySelector(".cost-row");
   currentQuantity.innerText =
     parseFloat(currentQuantity.innerText) + parseFloat(quantity);
-  currentCost.innerText = currentQuantity.innerText * product.price;
+  currentCost.innerText = currentQuantity.innerText * price;
   sumCostTotal();
 };
 
@@ -99,7 +99,7 @@ const createRecordRow = (product, quantity) => {
   quantityMinusBtn.addEventListener("click", () => {
     const row = app.querySelector(`[product-id='${product.id}']`);
     const currentQuantity = row.querySelector(".quantity-row");
-    currentQuantity.innerText > 1 && updateExistedRecord(product, -1)
+    currentQuantity.innerText > 1 && updateExistedRecord(product, -1);
   });
 
   return tr;
@@ -162,9 +162,9 @@ const handleNewItemForm = (event) => {
 };
 
 //Process
-products.forEach((product) => {
-  productSelect.append(new Option(product.name, product.id));
-  inventoryLists.append(createNewItem(product));
+products.forEach(({ id, name, price }) => {
+  productSelect.append(new Option(name, id));
+  inventoryLists.append(createNewItem({id, name, price}));
 });
 
 recordForm.addEventListener("submit", handleRecordForm);
@@ -172,9 +172,9 @@ newItemForm.addEventListener("submit", handleNewItemForm);
 
 printer.addEventListener("click", () => {
   print();
-  const recordRows = records.querySelectorAll(".record-row")
+  const recordRows = records.querySelectorAll(".record-row");
   recordRows.forEach((row) => {
     row.remove();
-  })
+  });
   costTotal.innerText = 0;
 });
