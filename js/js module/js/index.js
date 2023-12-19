@@ -1,5 +1,11 @@
-import x, { area, name } from "./square.js";
+import { counter, input, lists, saveBtn, titleText } from "./elements.js";
+import { saveBtnHandler } from "./handler.js";
 
-console.log(name);
-console.log(x);
-console.log(area(3, 2));
+const app = document.querySelector("#app");
+
+app.append(titleText);
+app.append(input);
+app.append(saveBtn);
+app.append(lists);
+app.append(counter);
+saveBtn.addEventListener("click", saveBtnHandler);
