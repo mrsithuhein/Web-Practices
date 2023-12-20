@@ -1,11 +1,6 @@
-import { counter, input, lists, saveBtn, titleText } from "./elements.js";
-import { saveBtnHandler } from "./handler.js";
+import Todo from "./todo.js";
 
-const app = document.querySelector("#app");
+export const app = document.querySelector("#app");
 
-app.append(titleText);
-app.append(input);
-app.append(saveBtn);
-app.append(lists);
-app.append(counter);
-saveBtn.addEventListener("click", saveBtnHandler);
+const todo = new Todo();
+todo.init();

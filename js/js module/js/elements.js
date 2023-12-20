@@ -8,4 +8,4 @@ export const titleText = createHeading("Todo app");
 export const input = createInput();
 export const saveBtn = createSaveBtn("Save");
 export const lists = createUl();
-export const counter = createCounter("Total:",0)
+export const counter = createCounter("Total",0)

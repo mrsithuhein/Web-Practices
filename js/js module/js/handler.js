@@ -1,8 +1,11 @@
 import { input, lists } from "./elements.js";
+import { app } from "./index.js";
+import { createLi } from "./li.js";
 
 export const saveBtnHandler = () => {
-  const li = document.createElement("li");
-  li.innerText = input.value;
-  lists.append(li);
+  const list = createLi(input.value);
+  lists.append(list);
   input.value = null;
+
+  app.querySelector("#totalCount").innerText = lists.children.length;
 };
