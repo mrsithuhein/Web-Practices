@@ -1,0 +1,74 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@400;700&family=Young+Serif&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap");
+@import "../node_modules/bootstrap-icons/font/bootstrap-icons.min.css";
+@import "../node_modules/animate.css/animate.min.css";
+
+$headings-font-family: "Roboto Condensed", sans-serif;
+$font-family-sans-serif: "Montserrat", sans-serif;
+
+$primary: black;
+
+$input-border-radius-lg: 0;
+$btn-border-radius-lg: 0;
+$input-border-color: $primary;
+$input-border-width: 2px;
+$form-check-input-border-radius: 0;
+$btn-border-radius: 0;
+$input-border-radius: 0;
+$list-group-border-radius: 0;
+
+.record-empty-row:last-child {
+  display: table-row;
+}
+.record-empty-row {
+  display: none;
+}
+
+body {
+  counter-reset: section;
+}
+
+.counter::before {
+  counter-increment: section;
+  content: counter(section);
+}
+
+.record-row {
+  position: relative;
+}
+
+.del-btn {
+  position: absolute;
+  left: 100%;
+  top: 0;
+  bottom: 0;
+  opacity: 0;
+  pointer-events: none;
+  transform: translateX(10px);
+}
+
+.quantity-minus-btn {
+  opacity: 0;
+  transform: translateX(-5px);
+}
+
+.quantity-plus-btn {
+  opacity: 0;
+  transform: translateX(5px);
+}
+
+.record-row:hover .del-btn,
+.record-row:hover .quantity-minus-btn,
+.record-row:hover .quantity-plus-btn {
+  opacity: 100%;
+  pointer-events: all;
+  transform: translateX(0px);
+  transition: 0.5s;
+}
+
+.quantity-row {
+  display: inline-block;
+  width: 10px;
+}
+
+@import "../node_modules/bootstrap/scss/bootstrap.scss";
