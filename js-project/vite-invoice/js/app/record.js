@@ -1,4 +1,4 @@
-import { app, costTotal } from "./selector";
+import { app, costTotal, records } from "./selector";
 
 const createRecord = (product, quantity) => {
   const tr = document.createElement("tr");
@@ -23,7 +23,6 @@ const createRecord = (product, quantity) => {
   const delRow = () => {
     if (confirm("Are you sure to delete?")) {
       tr.remove();
-      sumRecordCostTotal();
     }
   };
   const delBtn = tr.querySelector(".del-btn");
@@ -67,5 +66,16 @@ export const updateExistedRecord = ({ id, price }, quantity) => {
   currentQuantity.innerText =
     parseFloat(currentQuantity.innerText) + parseFloat(quantity);
   currentCost.innerText = currentQuantity.innerText * price;
-  sumRecordCostTotal();
+};
+
+export const recordObserver = () => {
+  const observerOptions = {
+    childList: true,
+    subtree: true,
+  };
+
+  const observer = new MutationObserver(() => {
+    sumRecordCostTotal();
+  });
+  observer.observe(records, observerOptions);
 };

@@ -1,10 +1,11 @@
+import { Offcanvas } from "bootstrap";
 import { createNewItem } from "./product";
 import {
   addNewRecord,
   sumRecordCostTotal,
   updateExistedRecord,
 } from "./record";
-import { app, newItemForm, productSelect, recordForm } from "./selector";
+import { app, inventory, newItemForm, productSelect, recordForm } from "./selector";
 import { products } from "./variable";
 
 export const recordFormHandler = (event) => {
@@ -48,3 +49,8 @@ export const printerHandler = () => {
   });
   costTotal.innerText = 0;
 };
+
+export const inventoryBtnHandler = () => {
+  const myInventoryOffcanvas = new Offcanvas(inventory);
+  myInventoryOffcanvas.show();
+}

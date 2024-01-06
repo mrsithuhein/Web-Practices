@@ -8,3 +8,5 @@ export const costTotal = app.querySelector("#costTotal");
 export const printer = app.querySelector(".printer");
 export const newItemForm = app.querySelector("#newItemForm");
 export const inventoryLists = app.querySelector("#inventoryLists");
+export const inventoryBtn = app.querySelector("#inventoryBtn");
+export const inventory = app.querySelector("#inventory");
